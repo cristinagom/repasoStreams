@@ -7,17 +7,19 @@
     {
       "nombre": "Antón",
       "curso": "DAM2",
+      "matriculado": false,
       "edad": 19
     },
     {
       "nombre": "Laura",
       "curso": "DAW2",
+      "matriculado": false,
       "edad": 20
     },
     {
       "nombre": "Breixo",
       "curso": "Ciber",
-      "matricula": false,
+      "matriculado": false,
       "edad": 23
     }
 ]

@@ -1,8 +1,5 @@
 package org.iesteis;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -24,9 +21,9 @@ public class Main {
                 groupingBy(i -> i % 2 == 0 ? "PAR" : "IMPAR"));
         System.out.println(map);
         List<Alumno> alumnos = new ArrayList<>();
-        alumnos.add(new Alumno("Maria", "DAM2", 20));
-        alumnos.add(new Alumno("Antón", "DAM2", 19));
-        alumnos.add(new Alumno("Laura", "DAW2", 20));
+//        alumnos.add(new Alumno("Maria", "DAM2", 20));
+//        alumnos.add(new Alumno("Antón", "DAM2", 19));
+//        alumnos.add(new Alumno("Laura", "DAW2", 20));
         alumnos.add(new Alumno("Breixo", "Ciber", false, 23));
         Map<String, List<String>> map2 =
                 alumnos.stream().collect
@@ -56,7 +53,16 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-        AlumnosStorage alumnos = new AlumnosStorage();
-        alumnos.cargarDatosCSV();
+        AlumnosStorageCSV alumnos = new AlumnosStorageCSV();
+        alumnos.cargarDatos();
+        List<Alumno> alumnosSimpsons = new ArrayList<>();
+        alumnosSimpsons.add(new Alumno("Homer", "DAM", 40));
+        alumnosSimpsons.add(new Alumno("Marge", "DAM", 40));
+        alumnosSimpsons.add(new Alumno("Bart", "DAW", 9));
+        alumnosSimpsons.add(new Alumno("Lisa", "DAW", 7));
+        alumnos.guardarDatos(alumnosSimpsons);
+
+        AlumnosStorageJSON alumnosJSON = new AlumnosStorageJSON();
+        alumnosJSON.cargarDatos();
     }
 }

@@ -1,21 +1,36 @@
 package org.iesteis;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Alumno {
 
+    @JsonProperty("nombre")
     private String nombre;
+    @JsonProperty("curso")
     private String curso;
+    @JsonProperty("matriculado")
     private boolean matriculado;
+    @JsonProperty("edad")
     private int edad;
 
-    public Alumno(String nombre, String curso, int edad) {
+    public Alumno(
+            @JsonProperty("nombre") String nombre,
+            @JsonProperty("curso") String curso,
+            @JsonProperty("edad") int edad) {
         this.nombre = nombre;
         this.curso = curso;
         this.edad = edad;
         this.matriculado = true;
     }
-    public Alumno(String nombre, String curso, boolean matriculado, int edad) {
+    @JsonCreator
+    public Alumno(
+            @JsonProperty("nombre") String nombre,
+            @JsonProperty("curso") String curso,
+            @JsonProperty("matriculado") boolean matriculado,
+            @JsonProperty("edad") int edad) {
         this.nombre = nombre;
         this.curso = curso;
         this.matriculado = matriculado;
@@ -56,6 +71,10 @@ public class Alumno {
 
     public String toString() {
         return "Alumno: " + nombre + " " + curso + " " + matriculado + " " + edad;
+    }
+
+    public String toStringCSV() {
+        return nombre + "," + curso + "," + matriculado + "," + edad;
     }
 
 }
