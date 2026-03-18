@@ -64,5 +64,11 @@ public class Main {
 
         AlumnosStorageJSON alumnosJSON = new AlumnosStorageJSON();
         alumnosJSON.cargarDatos();
+        alumnosJSON.guardarDatos(alumnosSimpsons);
+
+        AlumnosStorageXML alumnosXML = new AlumnosStorageXML();
+        alumnosXML.cargarDatos();
+        alumnosXML.guardarDatos(alumnosSimpsons);
+
     }
 }

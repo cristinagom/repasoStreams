@@ -1,0 +1,25 @@
+<alumnos>
+    <alumno>
+        <nombre>Maria</nombre>
+        <curso>DAM2</curso>
+        <edad>20</edad>
+    </alumno>
+    <alumno>
+        <nombre>Antón</nombre>
+        <curso>DAM2</curso>
+        <matriculado>false</matriculado>
+        <edad>19</edad>
+    </alumno>
+    <alumno>
+        <nombre>Laura</nombre>
+        <curso>DAW2</curso>
+        <matriculado>false</matriculado>
+        <edad>20</edad>
+    </alumno>
+    <alumno>
+        <nombre>Breixo</nombre>
+        <curso>Ciber</curso>
+        <matriculado>false</matriculado>
+        <edad>23</edad>
+    </alumno>
+</alumnos>
