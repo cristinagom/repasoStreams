@@ -1,4 +1,6 @@
-package org.iesteis;
+package org.iesteis.storage;
+
+import org.iesteis.model.Alumno;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,13 +17,13 @@ public class AlumnosStorageCSV {
         return new Alumno(nombre, curso, matriculado, edad);
     }
 
-    void cargarDatos() {
+    public void cargarDatos() {
         try {
             //Opcion 1: obtener Array de Strings
-            List<String> list = Files.readAllLines(Path.of("data/alumnos.txt"));
+            List<String> list = Files.readAllLines(Path.of("data/txt/alumnos.txt"));
             list.forEach(System.out::println);
             //Opcion 2: obtener Array de Alumnos
-            List<Alumno> alumnos = Files.lines(Path.of("data/alumnos.csv"))
+            List<Alumno> alumnos = Files.lines(Path.of("data/csv/alumnos.csv"))
                     .skip(1)
                     .map(line -> line.split(","))
                     .map(this::toAlumno)
@@ -34,9 +36,9 @@ public class AlumnosStorageCSV {
         }
     }
 
-    void guardarDatos(List<Alumno> alumnos) {
+    public void guardarDatos(List<Alumno> alumnos) {
         try {
-            Path path = Path.of("data/alumnos2.csv");
+            Path path = Path.of("data/csv/alumnos2.csv");
             StringBuilder sb = new StringBuilder();
             sb.append("Nombre,Curso,Matriculado,Edad\n");
             alumnos.forEach(alumno -> sb.append(alumno.toStringCSV()).append("\n"));

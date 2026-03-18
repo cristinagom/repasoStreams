@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void pruebas() {
+    public static void main (String[] args) {
 
         List<Integer> list = Arrays.asList(10, 2, 31, 54, 27, 9, 1);
         //System.out.println(list.stream().filter(i -> i % 2 == 0).mapToDouble(Integer::doubleValue).sum());
@@ -21,9 +21,9 @@ public class Main {
                 groupingBy(i -> i % 2 == 0 ? "PAR" : "IMPAR"));
         System.out.println(map);
         List<Alumno> alumnos = new ArrayList<>();
-//        alumnos.add(new Alumno("Maria", "DAM2", 20));
-//        alumnos.add(new Alumno("Antón", "DAM2", 19));
-//        alumnos.add(new Alumno("Laura", "DAW2", 20));
+        alumnos.add(new Alumno("Maria", "DAM2", 20));
+        alumnos.add(new Alumno("Antón", "DAM2", 19));
+        alumnos.add(new Alumno("Laura", "DAW2", 20));
         alumnos.add(new Alumno("Breixo", "Ciber", false, 23));
         Map<String, List<String>> map2 =
                 alumnos.stream().collect
@@ -47,28 +47,6 @@ public class Main {
         System.out.println(map5);
         System.out.println(alumnos.stream().mapToDouble(Alumno::getEdad).average().getAsDouble());
         System.out.println(alumnos.stream().collect(Collectors.averagingDouble(Alumno::getEdad)));
-
-    }
-
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        AlumnosStorageCSV alumnos = new AlumnosStorageCSV();
-        alumnos.cargarDatos();
-        List<Alumno> alumnosSimpsons = new ArrayList<>();
-        alumnosSimpsons.add(new Alumno("Homer", "DAM", 40));
-        alumnosSimpsons.add(new Alumno("Marge", "DAM", 40));
-        alumnosSimpsons.add(new Alumno("Bart", "DAW", 9));
-        alumnosSimpsons.add(new Alumno("Lisa", "DAW", 7));
-        alumnos.guardarDatos(alumnosSimpsons);
-
-        AlumnosStorageJSON alumnosJSON = new AlumnosStorageJSON();
-        alumnosJSON.cargarDatos();
-        alumnosJSON.guardarDatos(alumnosSimpsons);
-
-        AlumnosStorageXML alumnosXML = new AlumnosStorageXML();
-        alumnosXML.cargarDatos();
-        alumnosXML.guardarDatos(alumnosSimpsons);
 
     }
 }

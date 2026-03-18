@@ -1,4 +1,4 @@
-package org.iesteis;
+package org.iesteis.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
