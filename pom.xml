@@ -10,10 +10,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>fruitsAPI</module>
-        <module>streams</module>
         <module>files</module>
         <module>pokeAPI</module>
         <module>streams2</module>
+        <module>dragonballapi</module>
     </modules>
 
     <properties>
